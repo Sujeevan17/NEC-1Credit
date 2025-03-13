@@ -1,1 +1,29 @@
-Update this file to add the content
+version: "3"
+services:
+  personal_api_1:
+    image: "nandhakumarbm/22it026-personal-api-docker"
+    container_name: personal_api_container_1
+    restart: always
+    ports:
+      - "5003:5000"
+
+  ml_models_1:
+    image: "nandhakumarbm/22it026-ml-models-docker"
+    container_name: ml_models_container_1
+    restart: no
+    ports:
+      - "5004:5000"
+
+  personal_api_2:
+    image: "sujeevan17/22it058-personal-api-docker"
+    container_name: personal_api_container_2
+    restart: always
+    ports:
+      - "5005:5000"  # I updated the port here to avoid conflict
+
+  ml_model_2:
+    image: "sujeevan17/22it058-ml-model-docker"
+    container_name: ml_models_container_2
+    restart: no
+    ports:
+      - "5006:5000"  # I updated the port here to avoid conflict
